@@ -651,6 +651,11 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	}
 endif;
 
+
+
+
+
+// New functions
 function custom_post_filter_shortcode($atts) {
     ob_start();
 	$category_param = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
