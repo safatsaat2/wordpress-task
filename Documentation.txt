@@ -1,0 +1,26 @@
+-----****-----
+
+Custom Shortcode [custom_post_filter] this allows users to filter and display posts based on a selected category.
+ob_start() This function starts an output buffer to capture the HTML output generated within the function.
+
+$category_param is getting the category params using $GET
+
+extract(shortcode_atts(...)) is marging shortcode with default value if value is not define for this case.
+
+$query_args is the arguments for the WordPress query to fetch posts. It's set to retrieve all posts of the specified category.
+
+WP_Query is used to run the custom queries according to the  provided arguments
+
+Inside the loop, each post's title and content are displayed in a <div class="custom-post">
+wp_reset_postdata() is reseting the data
+
+If no posts are found, it displays "No posts found."
+
+
+shortcode named [custom_posts]. It's used to display posts from a specific category based on the "category" parameter provided in the URL
+
+It parses the shortcode attributes and sets a default value for the "category" attribute.
+
+It checks if a "category" parameter is specified in the URL (via $_GET) and updates the "category" attribute accordingly.
+
+It uses WP_Query to fetch posts from the specified category.
